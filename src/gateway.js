@@ -8,6 +8,11 @@ const VALID_API_KEY = process.env.API_KEY || 'fleet-gateway-key-2026';
 function createGatewayApp(backendUrl = DEFAULT_BACKEND_URL) {
   const app = express();
 
+  // Root landing route (redirects to Swagger UI)
+  app.get('/', (req, res) => {
+    res.redirect('/api-docs');
+  });
+
   // 1. Public Gateway Health Check
   app.get('/health', (req, res) => {
     res.status(200).json({ status: 'API Gateway UP', targetBackend: backendUrl });
