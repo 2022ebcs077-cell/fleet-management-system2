@@ -2,8 +2,9 @@
   "name": "fleet-management-system",
   "version": "1.0.0",
   "description": "Fleet Management System with API Gateway, Geolocation, SMS Alerts, Swagger, and Mocha/Chai Tests",
-  "main": "src/gateway.js",
+  "main": "src/server.js", 
   "scripts": {
+    "start": "node src/server.js",
     "start:backend": "node src/backendApp.js",
     "start:gateway": "node src/gateway.js",
     "test": "mocha --exit"
